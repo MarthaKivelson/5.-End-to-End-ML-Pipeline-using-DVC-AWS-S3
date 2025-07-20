@@ -9,7 +9,7 @@ import yaml
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 
-logger = logging.getLogger('feature-ENGG')
+logger = logging.getLogger('model_train')
 logger.setLevel("DEBUG")
 
 console_handler = logging.StreamHandler()
