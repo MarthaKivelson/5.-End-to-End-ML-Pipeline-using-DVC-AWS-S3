@@ -3,6 +3,8 @@ stages:
     cmd: python src/1_data_ingestion.py
     deps:
       - src/1_data_ingestion.py
+    params:
+      - 1_data_ingestion.test_size
     outs:
       - data/raw
 
@@ -19,6 +21,8 @@ stages:
     deps:
       - data/interim
       - src/3_feature_engg.py
+    params:
+      - 3_feature_engg.max_features
     outs:
       - data/processed
 
@@ -27,6 +31,8 @@ stages:
     deps:
       - data/processed
       - src/4_model_training.py
+    params:
+      - 4_model_training
     outs:
       - models/model.pkl
 
